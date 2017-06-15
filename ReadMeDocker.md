@@ -40,16 +40,16 @@ Depending on your operating system and your system settings, you might need to r
 ---CMD CONFIG--------------------------------------------------------
 
 To customize your pipeline-deployment, you can append the following to the run-command:
--l, --l	  : translate cds to aa (true or false)
--g, --g   : sample sequences (true or false)
--s, --s   : sample size (sequences per season)
--r, --r   : isolate name of root sequence
--ha, --ha : analyze ha and adjust numbering (true or false)
--n, --n   : numbering, number of amino acids in the signal peptide
--w, --w   : plot width in inches
--o, --o   : format of plot (pdf or png)
--f, --f   : show only significant results (true or false)
--h	  : show help (shows this list)
+	-l, --l	  : translate cds to aa (true or false)
+	-g, --g   : sample sequences (true or false)
+	-s, --s   : sample size (sequences per season)
+	-r, --r   : isolate name of root sequence
+	-ha, --ha : analyze ha and adjust numbering (true or false)
+	-n, --n   : numbering, number of amino acids in the signal peptide
+	-w, --w   : plot width in inches
+	-o, --o   : format of plot (pdf or png)
+	-f, --f   : show only significant results (true or false)
+	-h	  : show help (shows this list)
 TODO: add default values
 
 ---OUTPUT FILES------------------------------------------------------
