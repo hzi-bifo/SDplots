@@ -40,6 +40,7 @@ Depending on your operating system and your system settings, you might need to r
 ---CMD CONFIG--------------------------------------------------------
 
 To customize your pipeline-deployment, you can append the following to the run-command:
+
 	-l, --l	  : translate cds to aa (true or false)
 	-g, --g   : sample sequences (true or false)
 	-s, --s   : sample size (sequences per season)
@@ -50,6 +51,7 @@ To customize your pipeline-deployment, you can append the following to the run-c
 	-o, --o   : format of plot (pdf or png)
 	-f, --f   : show only significant results (true or false)
 	-h	  : show help (shows this list)
+	
 TODO: add default values
 
 ---OUTPUT FILES------------------------------------------------------
