@@ -58,10 +58,10 @@ TODO: add default values
 
 The final output consists of the following files: 
 
-	TODO add detailed description of relevant files, content and interpretation of the content:
+TODO add detailed description of relevant files, content and interpretation of the content:
 	
-	data.significant_positions.pdf		Plots ...
-	data.all_positions.pdf			More plots ...
+* data.significant_positions.pdf		Plots ...
+* data.all_positions.pdf			More plots ...
 
 
 
