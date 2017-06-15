@@ -10,7 +10,7 @@ The pre-print of this study is available under
 
 The image runs on Docker, thus Docker must be installed. Docker is available under
  
-	[DockerStore (Community Edition)](https://store.docker.com/search?type=edition&offering=community "Docker Store")
+[DockerStore (Community Edition)](https://store.docker.com/search?type=edition&offering=community "Docker Store")
 
 (the free community edition is sufficient) for a number of operating systems (Windows 10 Professional or Enterprise, Apple Mac OS Yosemite 10.10.3 or above, as well as a number of Linux distributions like Ubuntu, Debian or Fedora). Please follow the instructions on the respective download page and run 
 
