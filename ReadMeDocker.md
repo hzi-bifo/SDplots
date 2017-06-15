@@ -13,6 +13,8 @@ The image runs on Docker, thus Docker must be installed. Docker is available und
 	$docker version 			to check the version and
 	$docker run hello-world 		to verify that Docker can pull and run images.
 
+Depending on your operating system and your system settings, you might need to run the terminal as admin or type $sudo docker run... if your run into errors like "Got permission denied while trying to connect to the Docker daemon socket".
+
 ## Input Data
 
 Your input data must be contained in a file called "data_cds.fa", located within a folder named "data".
@@ -29,9 +31,6 @@ To run the SDPlot pipeline, open your cmd-line tool or terminal and insert:
 	(TODO: imagename depends on publication)
 
 The -v Path/.../data:/app/data mounts your local folder on the data-folder contained within the image. The pipeline writes the output in your local folder.
-
-Depending on your operating system and your system settings, you might need to run the terminal as admin or type $sudo docker run... if your run into errors like "Got permission denied while trying to connect to the Docker daemon socket".
-
 
 ## CMD Config
 
