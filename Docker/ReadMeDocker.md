@@ -1,4 +1,4 @@
-# SDPlots Docker Image
+# SD plots Docker Image
 The Docker image contains the software pipeline that was used to generate the data published in the manuscript 'Sweep Dynamics (SD) plots: Computational identification of selective sweeps to monitor the adaptation of influenza A viruses' and a docker instance of the SD plots pipeline.
 
 
