@@ -26,8 +26,9 @@ The software image runs on Docker. Docker is an open platform for developers and
        $docker version
        $docker run hello-world
 > If you are running into an error like `Got permission denied while trying to connect to the Docker daemon socket`, try to run
-	>	$docker version
-        >	$docker run hello-world
+
+	$sudo docker version
+	$sudo docker run hello-world
 instead.
 
 ### II | Input Data
