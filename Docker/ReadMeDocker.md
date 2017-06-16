@@ -29,7 +29,6 @@ The software image runs on Docker. Docker is an open platform for developers and
 
 	$sudo docker version
 	$sudo docker run hello-world
-instead.
 
 ### II | Input Data
 1. **Create a folder and name it *data*.** It does not matter where this folder is located on your machine, but it must be named data.
