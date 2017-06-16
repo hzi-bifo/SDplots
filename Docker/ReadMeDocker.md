@@ -1,7 +1,7 @@
 # SD Plots Docker Image
 The Docker image contains the software pipeline that was used to generate the data published in the manuscript *Sweep Dynamics (SD) plots: Computational identification of selective sweeps to monitor the adaptation of influenza A viruses*. Follow the steps below according to your operating system to deploy the pipeline yourself.
 
->**Contents of this ReadMe:**
+**Contents of this ReadMe:**
 + SD Plots on Linux
 	+ Requirements
 	+ Input Data
@@ -14,6 +14,7 @@ The Docker image contains the software pipeline that was used to generate the da
 + Docker Advanced
 + Questions and Bug Reports
 
+- - -
 ## SD Plots on Linux
 ### I | Requirements
 
@@ -29,7 +30,6 @@ The software image runs on Docker. Docker is an open platform for developers and
 
 	$sudo docker version
 	$sudo docker run hello-world
-instead.
 
 ### II | Input Data
 1. **Create a folder and name it *data*.** It does not matter where this folder is located on your machine, but it must be named data.
@@ -49,12 +49,12 @@ The -v Path/.../data:/app/data mounts your local folder on the data-folder conta
 >**Example**
 Say your input data is located in *johndoe/Documents/SDplots/HA/data/data_cds.fa* and the root sequence of your data is supposed to be *A/Ancona/01/2010* (please refer to the CMD Config part below to see more about cmd-line options). You want sampling to be enabled and you want the software to translate the cds into aa. You would then run 
 
-	> 	$sudo docker run -v johndoe/Documents/SDplots/HA/data:/app/data tklingenbifolab/sdplots:beta -r "A/Ancona/01/2010" -g true -l true
+	$sudo docker run -v johndoe/Documents/SDplots/HA/data:/app/data tklingenbifolab/sdplots:beta -r "A/Ancona/01/2010" -g true -l true
 
 >**CMD Config**
 > To customize your pipeline-deployment, you can append the following to the run-command:
 
-> 	-l, --l	  : translate cds to aa (true or false), default: true
+	-l, --l	  : translate cds to aa (true or false), default: true
 	-g, --g   : sample sequences (true or false), default: false
 	-s, --s   : sample size (sequences per season), default: 300
 	-r, --r   : isolate name of root sequence, must be set
@@ -103,7 +103,7 @@ Say your input data is located in *C:\users\johndoe\Documents\SDplots\HA\data\da
 >**CMD Config**
 > To customize your pipeline-deployment, you can append the following to the run-command:
 
-> 	-l, --l	  : translate cds to aa (true or false), default: true
+ 	-l, --l	  : translate cds to aa (true or false), default: true
 	-g, --g   : sample sequences (true or false), default: false
 	-s, --s   : sample size (sequences per season), default: 300
 	-r, --r   : isolate name of root sequence, must be set
