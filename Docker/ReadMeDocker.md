@@ -48,21 +48,21 @@ The -v Path/.../data:/app/data mounts your local folder on the data-folder conta
 >**Example**
 Say your input data is located in *johndoe/Documents/SDplots/HA/data/data_cds.fa* and the root sequence of your data is supposed to be *A/Ancona/01/2010* (please refer to the CMD Config part below to see more about cmd-line options). You want sampling to be enabled and you want the software to translate the cds into aa. You would then run 
 
-	> 	$sudo docker run -v johndoe/Documents/SDplots/HA/data:/app/data tklingenbifolab/sdplots:beta -r "A/Ancona/01/2010" -g true -l true
+	$sudo docker run -v johndoe/Documents/SDplots/HA/data:/app/data tklingenbifolab/sdplots:beta -r "A/Ancona/01/2010" -g true -l true
 
 >**CMD Config**
 > To customize your pipeline-deployment, you can append the following to the run-command:
 
-	> -l, --l	  : translate cds to aa (true or false), default: true
-	> -g, --g   : sample sequences (true or false), default: false
-	> -s, --s   : sample size (sequences per season), default: 300
-	> -r, --r   : isolate name of root sequence, must be set
-	> -ha, --ha : analyze ha and adjust numbering (true or false), default: true
-	> -n, --n   : numbering, number of amino acids in the signal peptide (dependent on subtype, e.g. 17 for pH1N1 and 16 for H3N2), default: 17
-	> -w, --w   : plot width in inches, default: 12
-	> -o, --o   : format of plot (pdf or png), default:"pdf"
-	> -f, --f   : show only significant results (true or false), default: true
-	> -h	  : show help (shows this list)
+	-l, --l	  : translate cds to aa (true or false), default: true
+	-g, --g   : sample sequences (true or false), default: false
+	-s, --s   : sample size (sequences per season), default: 300
+	-r, --r   : isolate name of root sequence, must be set
+	-ha, --ha : analyze ha and adjust numbering (true or false), default: true
+	-n, --n   : numbering, number of amino acids in the signal peptide (dependent on subtype, e.g. 17 for pH1N1 and 16 for H3N2), default: 17
+	-w, --w   : plot width in inches, default: 12
+	-o, --o   : format of plot (pdf or png), default:"pdf"
+	-f, --f   : show only significant results (true or false), default: true
+	-h	  : show help (shows this list)
 
 *[See section **Output Files** below **SD Plots for Windows** for further specification of the output.]*
 - - -
@@ -102,7 +102,7 @@ Say your input data is located in *C:\users\johndoe\Documents\SDplots\HA\data\da
 >**CMD Config**
 > To customize your pipeline-deployment, you can append the following to the run-command:
 
-> 	-l, --l	  : translate cds to aa (true or false), default: true
+ 	-l, --l	  : translate cds to aa (true or false), default: true
 	-g, --g   : sample sequences (true or false), default: false
 	-s, --s   : sample size (sequences per season), default: 300
 	-r, --r   : isolate name of root sequence, must be set
