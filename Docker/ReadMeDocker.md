@@ -15,9 +15,7 @@ Depending on your operating system and your system settings, you might need to r
 
 Your input data must be contained in a file called "data_cds.fa", located within a folder named "data".
 Please note that sequences without a full date (formatted as either yyyy-mm-dd or yyyy/mm/dd) will be ignored.
-For a reference file of how data_cds.fa should look like, please refer to
-
-	TODO add link to github file with valid data
+For a reference file of how data_cds.fa should look like, please refer to [data_cds.fa](https://github.com/hzi-bifo/SDplots/blob/master/Docker/data_cds.fa "data_cds.fa")
 
 ## Running the Pipeline
 
