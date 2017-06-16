@@ -1,4 +1,4 @@
-# SD plots Docker Image
+# SD Plots Docker Image
 The Docker image contains the software pipeline that was used to generate the data published in the manuscript 'Sweep Dynamics (SD) plots: Computational identification of selective sweeps to monitor the adaptation of influenza A viruses' and a docker instance of the SD plots pipeline.
 
 
@@ -23,8 +23,7 @@ For a reference file of how data_cds.fa should look like, please refer to
 
 To run the SDPlot pipeline, open your cmd-line tool or terminal and insert:
 
-	$docker run -v Complete/Path/to/your/local/folder/data:/app/data hzibifo/sdplots:release 
-	(TODO: imagename depends on publication)
+	$docker run -v [Complete/path/to/your/local/folder/]data:/app/data tklingenbifolab/sdplots:beta [OPTIONS (see CMD Config below)]
 
 The -v Path/.../data:/app/data mounts your local folder on the data-folder contained within the image. The pipeline writes the output in your local folder.
 
@@ -32,18 +31,16 @@ The -v Path/.../data:/app/data mounts your local folder on the data-folder conta
 
 To customize your pipeline-deployment, you can append the following to the run-command:
 
-	-l, --l	  : translate cds to aa (true or false)
-	-g, --g   : sample sequences (true or false)
-	-s, --s   : sample size (sequences per season)
-	-r, --r   : isolate name of root sequence
-	-ha, --ha : analyze ha and adjust numbering (true or false)
-	-n, --n   : numbering, number of amino acids in the signal peptide
-	-w, --w   : plot width in inches
-	-o, --o   : format of plot (pdf or png)
-	-f, --f   : show only significant results (true or false)
+	-l, --l	  : translate cds to aa (true or false), default: true
+	-g, --g   : sample sequences (true or false), default: false
+	-s, --s   : sample size (sequences per season), default: 300
+	-r, --r   : isolate name of root sequence, must be set if sampling is enabled
+	-ha, --ha : analyze ha and adjust numbering (true or false), default: true
+	-n, --n   : numbering, number of amino acids in the signal peptide (dependent on subtype, e.g. 17 for pH1N1 and 16 for H3N2), default: 17
+	-w, --w   : plot width in inches, default: 12
+	-o, --o   : format of plot (pdf or png), default:"pdf"
+	-f, --f   : show only significant results (true or false), default: true
 	-h	  : show help (shows this list)
-	
-TODO: add default values
 
 ## Output Files
 
