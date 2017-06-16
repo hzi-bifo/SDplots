@@ -25,6 +25,8 @@ To run the SDPlot pipeline, open your cmd-line tool or terminal and insert:
 
 The -v Path/.../data:/app/data mounts your local folder on the data-folder contained within the image. The pipeline writes the output in your local folder.
 
+If you are running Docker on Windows, you need to share the drive you want to mount in the Docker Settings (see [Shared Drives](https://docs.docker.com/docker-for-windows/#docker-settings "Docker Settings").
+
 ## CMD Config
 
 To customize your pipeline-deployment, you can append the following to the run-command:
@@ -32,7 +34,7 @@ To customize your pipeline-deployment, you can append the following to the run-c
 	-l, --l	  : translate cds to aa (true or false), default: true
 	-g, --g   : sample sequences (true or false), default: false
 	-s, --s   : sample size (sequences per season), default: 300
-	-r, --r   : isolate name of root sequence, must be set if sampling is enabled
+	-r, --r   : isolate name of root sequence, must be set
 	-ha, --ha : analyze ha and adjust numbering (true or false), default: true
 	-n, --n   : numbering, number of amino acids in the signal peptide (dependent on subtype, e.g. 17 for pH1N1 and 16 for H3N2), default: 17
 	-w, --w   : plot width in inches, default: 12
