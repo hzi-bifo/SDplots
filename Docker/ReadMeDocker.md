@@ -41,9 +41,10 @@ The software image runs on Docker. Docker is an open platform for developers and
 
 ### III | Running the Pipeline
 1. To run the SD plot pipeline, open your terminal and insert
+:
 
 	$docker run -v [Complete/path/to/your/local/folder/]data:/app/data tklingenbifolab/sdplots:beta -r [ROOT SEQUENCE] [OPTIONS (see CMD Config below)]
-	
+
 > Again, if you are running into an error like `Got permission denied while trying to connect to the Docker daemon socket`, try to run	
 > 	$sudo docker run -v [Complete/path/to/your/local/folder/]data:/app/data tklingenbifolab/sdplots:beta -r [ROOT SEQUENCE] [OPTIONS (see CMD Config below)]
 The -v Path/.../data:/app/data mounts your local folder on the data-folder contained within the image. The pipeline writes the output in your local folder.
