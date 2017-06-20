@@ -176,16 +176,9 @@ In you run into issues, please have a look at the problems listed below and foll
 ### "I want to update the image to the newest version available."
 **Why it happens:** Maybe the pipeline was updated, and you want the newer version.  
 **What to do:** If the versions don't differ by their tag, you have to remove your local copy of the image.  
-* You need the Image ID to remove the image. To find the image and its ID (a 12-character-string), type
-:
-
-	$docker images
-
-* To remove the image, type
-:
-
-	$docker rmi -f [IMAGE ID]
-* Run the image as described above. When Docker in unable to find the image locally, it will pull it from the repository.
+1. You need the Image ID to remove the image. To find the image and its ID (a 12-character-string), type `$docker images`
+2. To remove the image, type `$docker rmi -f [IMAGE ID]`
+2. Run the image as described above. When Docker in unable to find the image locally, it will pull it from the repository.
 
 > **What is a tag?** 
 > In the case of `tklingenbifolab/sdplots:beta`, `tklingenbifolab` is the user, `sdplots` is their repository and `beta` is the tag of the image
