@@ -138,17 +138,7 @@ If you want to control the usage of resources of the running software, please re
 
 ---
 ## Errors (aka: Output other than the desired results) and Troubleshooting
-In you run into issues, please have a look at the problems listed below and follow the instructions to tackle your problem.
-
-### "cannot remove ‘data_aa.fa’"
-**Output:**
-
-	----- 0.2 Translate cds into aa -----
-	rm: cannot remove ‘data_aa.fa’: No such file or directory
-	Done!
-	
-**Why it happens:** This is actually no error, but it happens when you want the software to translate the cds-file into an aa-file. The pipeline tries to remove the old aa-file, but if you didn't provide one, it casts this output. However, it will still translate the cds into a new aa-file.  
-**What to do:** Nothing. 
+If you run into issues, please have a look at the problems listed below and follow the instructions to tackle your problem.
 
 ### "Got permission denied while trying to connect to the Docker daemon socket"
 **Output:**
