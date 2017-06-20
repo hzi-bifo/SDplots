@@ -147,7 +147,7 @@ In you run into issues, please have a look at the problems listed below and foll
 	rm: cannot remove ‘data_aa.fa’: No such file or directory
 	Done!
 	
-**Why it happens:** This is actually no error, but it happens when you want the software to translate the cds-file into an aa-file. The pipeline tries to remove the old aa-file, but if you didn't provide one, it casts this output. However, it will still translate the cds into a new aa-file.
+**Why it happens:** This is actually no error, but it happens when you want the software to translate the cds-file into an aa-file. The pipeline tries to remove the old aa-file, but if you didn't provide one, it casts this output. However, it will still translate the cds into a new aa-file.  
 **What to do:** Nothing. 
 
 ### "Got permission denied while trying to connect to the Docker daemon socket"
@@ -155,7 +155,7 @@ In you run into issues, please have a look at the problems listed below and foll
 
 	Got permission denied while trying to connect to the Docker daemon socket [...]
 	
-**Why it happens:** This is a docker-related error. It means than you don't have the permission to run this command.
+**Why it happens:** This is a docker-related error. It means than you don't have the permission to run this command.  
 **What to do:** Re-run the command with root-/admin-privileges, depending on your operating system. If you are not root/admin, contact your system-administrator.
 
 ### "Not a directory"
@@ -163,27 +163,19 @@ In you run into issues, please have a look at the problems listed below and foll
 
 	[...]starting container process caused[...]not a directory[...]Error response from daemon: oci runtime error:[...]
 	
-**Why it happens:** You propably tried to mount a file onto the directory in the pipeline, and not the data-folder. 
-**What to do:** Make sure that you have `[Path/to/your/folder/]data:/app/data` set correctly.
-
-### "Not a directory"
-**Output:**
-
-	[...]starting container process caused[...]not a directory[...]Error response from daemon: oci runtime error:[...]
-	
-**Why it happens:** You propably tried to mount a file onto the directory in the pipeline, and not the data-folder. 
+**Why it happens:** You propably tried to mount a file onto the directory in the pipeline, and not the data-folder.  
 **What to do:** Make sure that you have `[Path/to/your/folder/]data:/app/data` set correctly.
 
 ### "Calculate Frequencies takes forever!"
 **Output:**  
 
 	----- 2. Calculate frequencies -----
-**Why it happens:** You cannot see the progress, but it's actually working. It just takes some time. 
+**Why it happens:** You cannot see the progress, but it's actually working. It just takes some time.  
 **What to do:** Wait for it. Don't terminate it. If there's an actual error, the pipeline will inform you.
 
 ### "I want to update the image to the newest version available."
-**Why it happens:** Maybe the pipeline was updated, and you want the newer version.
-**What to do:** If the versions don't differ by their tag, you have to remove your local copy of the image.
+**Why it happens:** Maybe the pipeline was updated, and you want the newer version.  
+**What to do:** If the versions don't differ by their tag, you have to remove your local copy of the image.  
 * You need the Image ID to remove the image. To find the image and its ID (a 12-character-string), type
 :
 
