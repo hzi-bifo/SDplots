@@ -185,5 +185,5 @@ In you run into issues, please have a look at the problems listed below and foll
 
 ---
 ## Questions and Bug Reports
-If you have questions about the SD plots pipeline or bugs to report, please contact John Doe at jdoe@thisisnorealemail.com.
+If you have questions about the SD plots pipeline or bugs to report, please contact Thorsten Klingen at thorsten.klingen@helmholtz-hzi.de.
 
