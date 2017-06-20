@@ -166,6 +166,10 @@ If you run into issues, please have a look at the problems listed below and foll
 > **What is a tag?** 
 > In the case of `tklingenbifolab/sdplots:beta`, `tklingenbifolab` is the user, `sdplots` is their repository and `beta` is the tag of the image
 
+### There is no file such as *data.significant_positions.pdf*
+**Why it happens:** When the *data.all_positions.pdf* is in your output folder, the pipeline worked fine. However, it failed to find significant positions, most likely because your input file (*data_cds.fa*) contained too few sequences for it to find anything of significance.
+**What to do:** Use more sequences. Expand your file by sequences from the predeceasing season for example, or from both hemispheres.
+
 ---
 ## Questions and Bug Reports
 If you have questions about the SD plots pipeline or bugs to report, please contact Thorsten Klingen at thorsten.klingen@helmholtz-hzi.de.
