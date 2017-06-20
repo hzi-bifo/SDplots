@@ -166,13 +166,6 @@ In you run into issues, please have a look at the problems listed below and foll
 **Why it happens:** You propably tried to mount a file onto the directory in the pipeline, and not the data-folder.  
 **What to do:** Make sure that you have `[Path/to/your/folder/]data:/app/data` set correctly.
 
-### "Calculate Frequencies takes forever!"
-**Output:**  
-
-	----- 2. Calculate frequencies -----
-**Why it happens:** You cannot see the progress, but it's actually working. It just takes some time.  
-**What to do:** Wait for it. Don't terminate it. If there's an actual error, the pipeline will inform you.
-
 ### "I want to update the image to the newest version available."
 **Why it happens:** Maybe the pipeline was updated, and you want the newer version.  
 **What to do:** If the versions don't differ by their tag, you have to remove your local copy of the image.  
