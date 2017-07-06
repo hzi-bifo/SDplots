@@ -94,7 +94,7 @@ The software image runs on Docker. Docker is an open platform for developers and
 1. You need to **share the drive** that contains the *sdplots*-folder in the Docker Settings (see [Shared Drives](https://docs.docker.com/docker-for-windows/#docker-settings "Docker Settings")). It's sufficient if you do this once the first time you use the pipeline.
 1. To run the SD plot pipeline, open your PowerShell as admin and insert:
 		
-		$docker run -run -v [Complete/path/to/your/local/folder/]sdplots:/app/sdplots tklingenbifolab/sdplots:beta -i [PREFIX] -o [OUTPUT NAME] -r [ROOT SEQUENCE] [OTHER OPTIONS (see CMD Config below)]
+		$docker run -v [Complete/path/to/your/local/folder/]sdplots:/app/sdplots tklingenbifolab/sdplots:beta -i [PREFIX] -o [OUTPUT NAME] -r [ROOT SEQUENCE] [OTHER OPTIONS (see CMD Config below)]
 		
 > Again, if you are running into an error like `Got permission denied while trying to connect to the Docker daemon socket`, you need to run the PowerShell as admin. Contact your system admin if you don't have admin rights.
 
