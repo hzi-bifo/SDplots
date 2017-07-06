@@ -155,7 +155,7 @@ If you run into issues, please have a look at the problems listed below and foll
 	[...]starting container process caused[...]not a directory[...]Error response from daemon: oci runtime error:[...]
 	
 **Why it happens:** You propably tried to mount a file onto the directory in the pipeline, and not the data-folder.  
-**What to do:** Make sure that you have `[Path/to/your/folder/]data:/app/data` set correctly.
+**What to do:** Make sure that you have `[Path/to/your/folder/]sdplots:/app/sdplots` set correctly.
 
 ### "I want to update the image to the newest version available."
 **Why it happens:** Maybe the pipeline was updated, and you want the newer version.  
