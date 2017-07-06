@@ -69,6 +69,12 @@ Say your input data is located in *johndoe/Documents/sdplots/HA_cds.fa* and the 
 	-h        : show help (shows this list)
 
 *[See section **Output Files** below **SD Plots for Windows** for further specification of the output.]*
+
+**Stopping the Pipeline**
+If you want to terminate the pipeline, you have two options:
+1. Close the terminal in which the pipeline is running.
+2. More elegant: Open a second terminal, run `$sudo docker ps` and copy the container ID of the execution that you want to stop. Then run `$sudo docker stop [CONTAINER ID]`. It may take a few seconds befor the container terminates.
+
 - - -
 ## SD Plots for Windows
 ### I | Requirements
@@ -119,6 +125,10 @@ Say your input data is located in *johndoe/Documents/sdplots/HA_cds.fa* and the 
 	-f, --f   : show only significant results (true or false), default: true
 	-h        : show help (shows this list)
 
+**Stopping the Pipeline**
+If you want to terminate the pipeline, you have two options:
+1. Close the terminal in which the pipeline is running.
+2. More elegant: Open a second terminal as admin, run `$docker ps` and copy the container ID of the execution that you want to stop. Then run `$docker stop [CONTAINER ID]`. It may take a few seconds befor the container terminates.
 ---
 ## Output Files
 
