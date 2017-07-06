@@ -82,11 +82,11 @@ The software image runs on Docker. Docker is an open platform for developers and
 
 ### 3) Running the Pipeline
 1. You need to **share the drive** that contains the *sdplots*-folder in the Docker Settings (see [Shared Drives](https://docs.docker.com/docker-for-windows/#docker-settings "Docker Settings")). It's sufficient if you do this once the first time you use the pipeline.
-1. To run the SD plot pipeline, open your PowerShell as admin and insert:
+2. To run the SD plot pipeline, open your PowerShell as admin and insert:
 		
 		$docker run -v [Complete/path/to/your/local/folder/]sdplots:/app/sdplots tklingenbifolab/sdplots:beta -i [PREFIX] -o [OUTPUT NAME] -r [ROOT SEQUENCE] [OTHER OPTIONS (see CMD Config below)]
 		
-2. To customize your pipeline-deployment, you can append the following to the run-command:
+3. To customize your pipeline-deployment, you can append the following to the run-command:
 >
 
 	-i, --i   : name of input files, must be set
@@ -102,13 +102,13 @@ The software image runs on Docker. Docker is an open platform for developers and
 	-f, --f   : show only significant results (true or false), default: true
 	-h        : show help (shows this list)
 
-3. **Example**
+4. **Example**
 
 Say your input data is located in */home/johndoe/sdplots/HA_cds.fa* and the root sequence of your data is supposed to be *A/California/05/2009*. You want to set the output name to *test_run* and you want sampling to be enabled at 50 samples per season. You would then run
 
 	> 	$docker run -v C:\users\johndoe\Documents\sdplots:\app\sdplots tklingenbifolab/sdplots:beta -i HA -o test -r "A/California/05/2009" -g true -s 50
 
-4. **Stopping the Pipeline**
+5. **Stopping the Pipeline**
 
 If you want to terminate the pipeline, you have two options:
 1. Close the terminal in which the pipeline is running.
@@ -121,7 +121,7 @@ TODO
 
 ## Output Files
 
-The output is written into a new folder named by the `-o`-parameter, for example *test*. If there is already a folder named this way, the pipeline will tell you to pick a different name and terminate. This allows you to run multiple executions parallel on your machine if you need to. The folder is located in the *sdplots*-folder you created earlier. The original input-file remains in the *sdplots*-folder but is also copied into your output folder.
+The output is written into a new folder named by the `-o`-parameter, for example *test_run*. If there is already a folder named this way, the pipeline will tell you to pick a different name and terminate. This allows you to run multiple executions parallel on your machine if you need to. The folder is located in the *sdplots*-folder you created earlier. The original input-file remains in the *sdplots*-folder but is also copied into your output folder.
 
 The output consists of the following files:
 	
@@ -135,40 +135,6 @@ The output consists of the following files:
 ---
 ## Docker Advanced
 If you want to control the usage of resources of the running software, please refer to [Docker Runtime Constraints on Resources](https://docs.docker.com/engine/reference/run/#runtime-constraints-on-resources "docs.docker.com").
-
----
-## Errors (aka: Output other than the desired results) and Troubleshooting
-If you run into issues, please have a look at the problems listed below and follow the instructions to tackle your problem.
-
-### "Got permission denied while trying to connect to the Docker daemon socket"
-**Output:**
-
-	Got permission denied while trying to connect to the Docker daemon socket [...]
-	
-**Why it happens:** This is a docker-related error. It means than you don't have the permission to run this command.  
-**What to do:** Re-run the command with root-/admin-privileges, depending on your operating system. If you are not root/admin, contact your system-administrator.
-
-### "Not a directory"
-**Output:**
-
-	[...]starting container process caused[...]not a directory[...]Error response from daemon: oci runtime error:[...]
-	
-**Why it happens:** You propably tried to mount a file onto the directory in the pipeline, and not the data-folder.  
-**What to do:** Make sure that you have `[Path/to/your/folder/]sdplots:/app/sdplots` set correctly.
-
-### "I want to update the image to the newest version available."
-**Why it happens:** Maybe the pipeline was updated, and you want the newer version.  
-**What to do:** If the versions don't differ by their tag, you have to remove your local copy of the image.  
-1. You need the Image ID to remove the image. To find the image and its ID (a 12-character-string), type `$docker images`
-2. To remove the image, type `$docker rmi -f [IMAGE ID]`
-2. Run the image as described above. When Docker in unable to find the image locally, it will pull it from the repository.
-
-> **What is a tag?** 
-> In the case of `tklingenbifolab/sdplots:beta`, `tklingenbifolab` is the user, `sdplots` is their repository and `beta` is the tag of the image
-
-### There is no file such as *data.significant_positions.pdf*
-**Why it happens:** When the *data.all_positions.pdf* is in your output folder, the pipeline worked fine. However, it failed to find significant positions, most likely because your input file (*data_cds.fa*) contained too few sequences for it to find anything of significance.
-**What to do:** Use more sequences. Expand your file by sequences from the predeceasing season for example, or from both hemispheres.
 
 ---
 ## Questions and Bug Reports
