@@ -1,7 +1,8 @@
-# SD Plots Docker Image
-The Docker image contains the software pipeline that was used to generate the data published in the manuscript *Sweep Dynamics (SD) plots: Computational identification of selective sweeps to monitor the adaptation of influenza A viruses*. Follow the steps below according to your operating system to deploy the pipeline yourself.
+# SD Plots Pipeline
+This readme describes the software that was used to generate the data published in the manuscript *Sweep Dynamics (SD) plots: Computational identification of selective sweeps to monitor the adaptation of influenza A viruses*. The SD plots pipeline is embedded in a docker container and available for Linux, Windows and iOS systems.
+Follow the steps below according to your operating system to deploy the pipeline yourself.
 
-**Contents of this ReadMe:**
+**Contents of this Readme:**
 + SD Plots on Linux
 	+ Requirements
 	+ Input Data
@@ -17,40 +18,25 @@ The Docker image contains the software pipeline that was used to generate the da
 
 - - -
 ## SD Plots on Linux
-### I | Requirements
+### 1) Requirements
 
-The software image runs on Docker. Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications. It's available for a number of Linux distributions like Ubuntu, Debian or Fedora.
+The software image runs on Docker. Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications. It is available for a number of Linux distributions like Ubuntu, Debian or Fedora.
 
 1. **Install Docker**, if it is not already installed on your machine. Docker is available under [DockerStore (Community Edition)](https://store.docker.com/search?type=edition&offering=community "Docker Store") (the free community edition is sufficient). Please follow the instructions on the respective download page.
 
-2. To **check if Docker is running properly**, open the terminal and type:
-
-       $docker version
-       $docker run hello-world
-> If you are running into an error like `Got permission denied while trying to connect to the Docker daemon socket`, try to run
-
-	$sudo docker version
-	$sudo docker run hello-world
-
-### II | Input Data
-1. **Create a folder and name it *sdplots*,** or, if you've run the pipeline before, you can re-use the old sdplots-folder. It does not matter where this folder is located on your machine, but it must be named *sdplots*.
+### 2) Input Data
+1. **Create a folder called *sdplots*,** or, if you've run the pipeline before, you can re-use the old sdplots-folder. It does not matter where this folder is located on your machine, but it must be named *sdplots*. The docker image will mount this folder to access the data that is located in there. 
 2. **Copy the file containing all sequences you want to analyze into the *sdplots* folder.** It must be named *[PREFIX]_cds.fa* where [PREFIX] can be any character sequence. If you want to provide the amino acid sequences along with the nucleotide sequences, also create a second file called *[PREFIX]_aa.fa* and place it in the *sdplots*-folder as well. The prefix must be the same!
-> Please note that sequences without a full date (formatted as either yyyy-mm-dd or yyyy/mm/dd) will be ignored.
+> Please note that sequences without a full date (formatted as either yyyy-mm-dd or yyyy/mm/dd) will be ignored by the pipeline.
 > Identifiers in the cds file must match the identifiers for the respective aa-sequence in the aa file.
-> For a reference file of how [PREFIX]_cds.fa should look like, please refer to [this file](https://github.com/hzi-bifo/SDplots/blob/master/Docker/data_cds.fa "HA_cds.fa").
+> For a reference file of how [PREFIX]_cds.fa should look like, please refer to [this file](https://github.com/hzi-bifo/SDplots/blob/master/Software/Testdata/HA_cds.fa "HA_cds.fa").
 
-### III | Running the Pipeline
-1. To run the SD plot pipeline, open your terminal and insert
-:
+### 3) Running the Pipeline
+1. To run the SD plot pipeline, open your terminal and insert:
 
 	$docker run -v [Complete/path/to/your/local/folder/]sdplots:/app/sdplots tklingenbifolab/sdplots:beta -i [PREFIX] -o [OUTPUT NAME] -r [ROOT SEQUENCE] [OTHER OPTIONS (see CMD Config below)]
 
 > Again, if you are running into an error like `Got permission denied while trying to connect to the Docker daemon socket`, try to run `$sudo docker run ...`
-
->**Example**
-Say your input data is located in *johndoe/Documents/sdplots/HA_cds.fa* and the root sequence of your data is supposed to be *A/California/05/2009* (please refer to the CMD Config part below to see more about cmd-line options). You want to set the output name to *test* and you want sampling to be enabled at 50 samples per season. You would then run 
-
-	$sudo docker run -v johndoe/Documents/sdplots:/app/sdplots tklingenbifolab/sdplots:beta -i HA -o test -r "A/California/05/2009" -g true -s 50
 
 >**CMD Config**
 > To customize your pipeline-deployment, you can append the following to the run-command:
@@ -70,14 +56,21 @@ Say your input data is located in *johndoe/Documents/sdplots/HA_cds.fa* and the 
 
 *[See section **Output Files** below **SD Plots for Windows** for further specification of the output.]*
 
+
+>**Example**
+Say your input data is located in */home/johndoe/sdplots/HA_cds.fa* and the root sequence of your data is supposed to be *A/California/05/2009*. You want to set the output name to *test_run* and you want sampling to be enabled at 50 samples per season. You would then run 
+
+	$sudo docker run -v /home/johndoe/sdplots:/app/sdplots tklingenbifolab/sdplots:beta -i HA -o test_run -r "A/California/05/2009" -g true -s 50
+
 **Stopping the Pipeline**
+
 If you want to terminate the pipeline, you have two options:
 1. Close the terminal in which the pipeline is running.
 2. More elegant: Open a second terminal, run `$sudo docker ps` and copy the container ID of the execution that you want to stop. Then run `$sudo docker stop [CONTAINER ID]`. It may take a few seconds befor the container terminates.
 
 - - -
 ## SD Plots for Windows
-### I | Requirements
+### 1) Requirements
 
 The software image runs on Docker. Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications. It's available for Windows 10 Professional and Enterprise.
 
