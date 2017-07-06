@@ -37,37 +37,36 @@ The software image runs on Docker. Docker is an open platform for developers and
 2. **Copy the file containing all sequences you want to analyze into the *sdplots* folder.** It must be named *[PREFIX]_cds.fa* where [PREFIX] can be any character sequence. If you want to provide the amino acid sequences along with the nucleotide sequences, also create a second file called *[PREFIX]_aa.fa* and place it in the *sdplots*-folder as well. The prefix must be the same!
 > Please note that sequences without a full date (formatted as either yyyy-mm-dd or yyyy/mm/dd) will be ignored.
 > Identifiers in the cds file must match the identifiers for the respective aa-sequence in the aa file.
-> For a reference file of how [PREFIX]_cds.fa should look like, please refer to [this file](https://github.com/hzi-bifo/SDplots/blob/master/Docker/data_cds.fa "data_cds.fa").
+> For a reference file of how [PREFIX]_cds.fa should look like, please refer to [this file](https://github.com/hzi-bifo/SDplots/blob/master/Docker/data_cds.fa "HA_cds.fa").
 
 ### III | Running the Pipeline
 1. To run the SD plot pipeline, open your terminal and insert
 :
 
-	$docker run -v /etc/localtime:/etc/localtime:ro -v [Complete/path/to/your/local/folder/]sdplots:/app/sdplots tklingenbifolab/sdplots:beta -i [PREFIX] -r [ROOT SEQUENCE] [OTHER OPTIONS (see CMD Config below)]
+	$docker run -v [Complete/path/to/your/local/folder/]sdplots:/app/sdplots tklingenbifolab/sdplots:beta -i [PREFIX] -o [OUTPUT NAME] -r [ROOT SEQUENCE] [OTHER OPTIONS (see CMD Config below)]
 
-> Again, if you are running into an error like `Got permission denied while trying to connect to the Docker daemon socket`, try to run	
-> 	$sudo docker run ...
+> Again, if you are running into an error like `Got permission denied while trying to connect to the Docker daemon socket`, try to run `$sudo docker run ...`
 
 >**Example**
-Say your input data is located in *johndoe/Documents/sdplots/HA_cds.fa* and the root sequence of your data is supposed to be *A/Ancona/01/2010* (please refer to the CMD Config part below to see more about cmd-line options). You want sampling to be enabled and you want the software to translate the cds into aa. You would then run 
+Say your input data is located in *johndoe/Documents/sdplots/HA_cds.fa* and the root sequence of your data is supposed to be *A/California/05/2009* (please refer to the CMD Config part below to see more about cmd-line options). You want to set the output name to *test* and you want sampling to be enabled at 50 samples per season. You would then run 
 
-	$sudo docker run -v /etc/localtime:/etc/localtime:ro -v johndoe/Documents/sdplots:/app/sdplots tklingenbifolab/sdplots:beta -i HA -r "A/Ancona/01/2010" -g true -l true
+	$sudo docker run -v johndoe/Documents/sdplots:/app/sdplots tklingenbifolab/sdplots:beta -i HA -o test -r "A/California/05/2009" -g true -s 50
 
 >**CMD Config**
 > To customize your pipeline-deployment, you can append the following to the run-command:
 
 	-i, --i   : name of input files, must be set
-	-l, --l   : translate cds to aa (true or false), default: false
+	-o, --o   : name of output folder, must be set
+	-r, --r   : isolate name of root sequence, must be set
+	-l, --l   : translate cds to aa (true or false), default: true
 	-g, --g   : sample sequences (true or false), default: false
 	-s, --s   : sample size (sequences per season, should be larger than 10 and smaller than the maximum number of sequences in a season), default: 300
-	-r, --r   : isolate name of root sequence, must be set
 	-ha, --ha : analyze ha and adjust numbering (true or false), default: true
 	-n, --n   : numbering, number of amino acids in the signal peptide (dependent on subtype, e.g. 17 for pH1N1 and 16 for H3N2), default: 17
 	-w, --w   : plot width in inches, default: 12
-	-o, --o   : format of plot (pdf or png), default:"pdf"
+	-p, --p   : format of plot (pdf or png), default:"pdf"
 	-f, --f   : show only significant results (true or false), default: true
 	-h        : show help (shows this list)
-
 
 *[See section **Output Files** below **SD Plots for Windows** for further specification of the output.]*
 - - -
@@ -95,35 +94,35 @@ The software image runs on Docker. Docker is an open platform for developers and
 1. You need to **share the drive** that contains the *sdplots*-folder in the Docker Settings (see [Shared Drives](https://docs.docker.com/docker-for-windows/#docker-settings "Docker Settings")). It's sufficient if you do this once the first time you use the pipeline.
 1. To run the SD plot pipeline, open your PowerShell as admin and insert:
 		
-		$docker run -v /etc/localtime:/etc/localtime:ro -v [Complete/path/to/your/local/folder/]sdplots:/app/sdplots tklingenbifolab/sdplots:beta -i [PREFIX] -r [ROOT SEQUENCE] [OTHER OPTIONS (see CMD Config below)]
-		TODO: check if this really works on windows!!
+		$docker run -run -v [Complete/path/to/your/local/folder/]sdplots:/app/sdplots tklingenbifolab/sdplots:beta -i [PREFIX] -o [OUTPUT NAME] -r [ROOT SEQUENCE] [OTHER OPTIONS (see CMD Config below)]
 		
 > Again, if you are running into an error like `Got permission denied while trying to connect to the Docker daemon socket`, you need to run the PowerShell as admin. Contact your system admin if you don't have admin rights.
 
 >**Example**
-Say your input data is located in *C:\users\johndoe\Documents\sdplots\HA_cds.fa* and the root sequence of your data is supposed to be *A/Ancona/01/2010* (please refer to the CMD Config part below to see more about cmd-line options). You want sampling to be enabled and you want the software to translate the cds into aa. You would then run 
+Say your input data is located in *johndoe/Documents/sdplots/HA_cds.fa* and the root sequence of your data is supposed to be *A/California/05/2009* (please refer to the CMD Config part below to see more about cmd-line options). You want to set the output name to *test* and you want sampling to be enabled at 50 samples per season. You would then run 
 
-	> 	$docker run -v /etc/localtime:/etc/localtime:ro -v C:\users\johndoe\Documents\sdplots:\app\sdplots tklingenbifolab/sdplots:beta -i HA -r "A/Ancona/01/2010" -g true -l true
+	> 	$docker run -v C:\users\johndoe\Documents\sdplots:\app\sdplots tklingenbifolab/sdplots:beta -i HA -o test -r "A/California/05/2009" -g true -s 50
 
 >**CMD Config**
 > To customize your pipeline-deployment, you can append the following to the run-command:
 
 	-i, --i   : name of input files, must be set
-	-l, --l   : translate cds to aa (true or false), default: false
+	-o, --o   : name of output folder, must be set
+	-r, --r   : isolate name of root sequence, must be set
+	-l, --l   : translate cds to aa (true or false), default: true
 	-g, --g   : sample sequences (true or false), default: false
 	-s, --s   : sample size (sequences per season, should be larger than 10 and smaller than the maximum number of sequences in a season), default: 300
-	-r, --r   : isolate name of root sequence, must be set
 	-ha, --ha : analyze ha and adjust numbering (true or false), default: true
 	-n, --n   : numbering, number of amino acids in the signal peptide (dependent on subtype, e.g. 17 for pH1N1 and 16 for H3N2), default: 17
 	-w, --w   : plot width in inches, default: 12
-	-o, --o   : format of plot (pdf or png), default:"pdf"
+	-p, --p   : format of plot (pdf or png), default:"pdf"
 	-f, --f   : show only significant results (true or false), default: true
 	-h        : show help (shows this list)
 
 ---
 ## Output Files
 
-The output is written into a new folder named with the prefix and a timestamp, for example *HA_20170630_110005*. This allows you to run multiple executions parallel on your machine if you need to. The folder is located in the *sdplots*-folder you created earlier. The original input-file remains in the *sdplots*-folder but is also copied into your output folder.
+The output is written into a new folder named by the `-o`-parameter and a timestamp, for example *test*. If there is already a folder named this way, the pipeline will tell you to pick a different name and terminate. This allows you to run multiple executions parallel on your machine if you need to. The folder is located in the *sdplots*-folder you created earlier. The original input-file remains in the *sdplots*-folder but is also copied into your output folder.
 
 The output consists of the following files:
 	
