@@ -14,7 +14,6 @@ Follow the steps below according to your operating system to deploy the pipeline
 + SD Plots on MAC
 + Output Files
 + Docker Advanced
-+ Errors (aka: Output other than the desired results) and Troubleshooting
 + Questions and Bug Reports
 
 - - -
@@ -116,7 +115,8 @@ If you want to terminate the pipeline, you have two options:
 ---
 ## SD Plots on Mac
 ### 1) Requirements
-TODO
+
+To be completed soon.
 ---
 
 ## Output Files
