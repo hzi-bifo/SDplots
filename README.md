@@ -10,4 +10,4 @@ The Data folder contains all data that was used in the publication. We provide t
 This folder comprises the figures and tables that are published in the manuscript and additional information that is not included in the manuscript.
 
 ## Software
-In here, we supply the SD plots software. Detailed descriptions and instructions are provided in the readme https://github.com/hzi-bifo/SDplots/blob/master//Software/README.md .
+In here, we supply the SD plots software. Detailed descriptions and instructions are provided in the readme https://github.com/hzi-bifo/SDplots/blob/master/Software/README.md .
