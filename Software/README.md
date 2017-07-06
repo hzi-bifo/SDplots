@@ -71,9 +71,9 @@ If you want to terminate the pipeline, you have two options:
 The software image runs on Docker. Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications. It's available for Windows 10 Professional and Enterprise.
 
 1. **Install Docker**, if it is not already installed on your machine. Docker is available under [DockerStore (Community Edition)](https://store.docker.com/search?type=edition&offering=community "Docker Store") (the free community edition is sufficient). Please follow the instructions on the respective download page.
-
+ 
 ### 2) Input Data
-1. **Create a folder and name it *sdplots* **or, if you've run the pipeline before, you can re-use the old sdplots-folder. It does not matter where this folder is located on your machine, but it must be named *sdplots*.
+1. **Create a folder called *sdplots*,** or, if you've run the pipeline before, you can re-use the old sdplots-folder. It does not matter where this folder is located on your machine, but it must be named *sdplots*.
 2. **Copy the file containing all sequences you want to analyze into the *sdplots* folder.** It must be named *[PREFIX]_cds.fa* where [PREFIX] can be any character sequence. If you want to provide the amino acid sequences along with the nucleotide sequences, also create a second file called *[PREFIX]_aa.fa* and place it in the *sdplots*-folder as well. The prefix must be the same!
 > Please note that sequences without a full date (formatted as either yyyy-mm-dd or yyyy/mm/dd) will be ignored.
 > Identifiers in the cds file must match the identifiers for the respective aa-sequence in the aa file.
