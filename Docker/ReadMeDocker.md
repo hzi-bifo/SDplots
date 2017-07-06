@@ -132,7 +132,7 @@ If you want to terminate the pipeline, you have two options:
 ---
 ## Output Files
 
-The output is written into a new folder named by the `-o`-parameter and a timestamp, for example *test*. If there is already a folder named this way, the pipeline will tell you to pick a different name and terminate. This allows you to run multiple executions parallel on your machine if you need to. The folder is located in the *sdplots*-folder you created earlier. The original input-file remains in the *sdplots*-folder but is also copied into your output folder.
+The output is written into a new folder named by the `-o`-parameter, for example *test*. If there is already a folder named this way, the pipeline will tell you to pick a different name and terminate. This allows you to run multiple executions parallel on your machine if you need to. The folder is located in the *sdplots*-folder you created earlier. The original input-file remains in the *sdplots*-folder but is also copied into your output folder.
 
 The output consists of the following files:
 	
