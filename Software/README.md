@@ -1,5 +1,5 @@
 # SD Plots Pipeline
-This readme describes the software that was used to generate the data published in the manuscript *Sweep Dynamics (SD) plots: Computational identification of selective sweeps to monitor the adaptation of influenza A viruses*. The SD plots pipeline is embedded in a docker container and available for Linux, Windows and iOS systems.
+This readme describes the software that was used to generate the data published in the manuscript *Sweep Dynamics (SD) plots: Computational identification of selective sweeps to monitor the adaptation of influenza A viruses*. The SD plots pipeline is embedded in a docker container and available for Linux, Windows and Mac systems.
 Follow the steps below according to your operating system to deploy the pipeline yourself.
 
 **Contents of this Readme:**
@@ -38,8 +38,8 @@ The software image runs on Docker. Docker is an open platform for developers and
 
 > Again, if you are running into an error like `Got permission denied while trying to connect to the Docker daemon socket`, try to run `$sudo docker run ...`
 
->**CMD Config**
-> To customize your pipeline-deployment, you can append the following to the run-command:
+2. To customize your pipeline-deployment, you can append the following to the run-command:
+> 
 
 	-i, --i   : name of input files, must be set
 	-o, --o   : name of output folder, must be set
@@ -54,15 +54,13 @@ The software image runs on Docker. Docker is an open platform for developers and
 	-f, --f   : show only significant results (true or false), default: true
 	-h        : show help (shows this list)
 
-*[See section **Output Files** below **SD Plots for Windows** for further specification of the output.]*
+3. **Example**
 
+Say your input data is located in */home/johndoe/sdplots/HA_cds.fa* and the root sequence of your data is supposed to be *A/California/05/2009*. You want to set the output name to *test_run* and you want sampling to be enabled at 50 samples per season. You would then run
+>
+ 	$sudo docker run -v /home/johndoe/sdplots:/app/sdplots tklingenbifolab/sdplots:beta -i HA -o test_run -r "A/California/05/2009" -g true -s 50
 
->**Example**
-Say your input data is located in */home/johndoe/sdplots/HA_cds.fa* and the root sequence of your data is supposed to be *A/California/05/2009*. You want to set the output name to *test_run* and you want sampling to be enabled at 50 samples per season. You would then run 
-
-	$sudo docker run -v /home/johndoe/sdplots:/app/sdplots tklingenbifolab/sdplots:beta -i HA -o test_run -r "A/California/05/2009" -g true -s 50
-
-**Stopping the Pipeline**
+4. **Stopping the Pipeline**
 
 If you want to terminate the pipeline, you have two options:
 1. Close the terminal in which the pipeline is running.
