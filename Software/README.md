@@ -114,11 +114,8 @@ If you want to terminate the pipeline, you have two options:
 2. More elegant: Open a second terminal as admin, run `$docker ps` and copy the container ID of the execution that you want to stop. Then run `$docker stop [CONTAINER ID]`. It may take a few seconds befor the container terminates.
 ---
 ## SD Plots on Mac
-### 1) Requirements
-
 To be completed soon.
 ---
-
 ## Output Files
 
 The output is written into a new folder named by the `-o`-parameter, for example *test_run*. If there is already a folder named this way, the pipeline will tell you to pick a different name and terminate. This allows you to run multiple executions parallel on your machine if you need to. The folder is located in the *sdplots*-folder you created earlier. The original input-file remains in the *sdplots*-folder but is also copied into your output folder.
