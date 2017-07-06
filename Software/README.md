@@ -126,11 +126,10 @@ The output is written into a new folder named by the `-o`-parameter, for example
 The output consists of the following files:
 	
 * **data.significant_positions.pdf**  SD plots of the significant positions
-* **data** This folder contains the input data as well as data generated during the calculation.
-* **output**  This folder contains further output and provides deeper insight into the results.
+* **data** This folder contains the input data as well as intermediate data generated during the calculation.
+* **output**  This folder contains further output and provides statistics about the frequencies of sweep-related changes.
     * **data.all_positions.pdf** SD plots of all positions
-    * ...
-* **positionplots** This folder contains SD plots for every single position. If a position shows no mutations in the given data, no plot will be shown in the respective pdf.
+* **positionplots** This folder contains SD plots for every single position. If no amino acid change is detected at a position, the respective position plot will be empty.
 
 ---
 ## Docker Advanced
