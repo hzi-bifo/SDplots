@@ -80,7 +80,7 @@ The software image runs on Docker. Docker is an open platform for developers and
 2. **Copy the file containing all sequences you want to analyze into the *sdplots* folder.** It must be named *[PREFIX]_cds.fa* where *[PREFIX]* can be any character sequence. If you want to provide the amino acid sequences along with the nucleotide sequences, also create a second file called *[PREFIX]_aa.fa* and place it in the *sdplots*-folder as well. The prefix must be the same!
 > Please note that sequences without a full date (formatted as either yyyy-mm-dd or yyyy/mm/dd) will be ignored.
 > Identifiers in the cds file must match the identifiers for the respective aa-sequence in the aa file.
-> For a reference file of how [PREFIX]_cds.fa should look like, please refer to [this file](https://github.com/hzi-bifo/SDplots/blob/master/Docker/data_cds.fa "data_cds.fa").
+> For a reference file of how [PREFIX]_cds.fa should look like, please refer to [this file](https://github.com/hzi-bifo/SDplots/blob/master/Software/Testdata/HA_cds.fa "HA_cds.fa").
 
 ### 3) Running the Pipeline
 1. You need to **share the drive** that contains the *sdplots*-folder in the Docker Settings (see [Shared Drives](https://docs.docker.com/docker-for-windows/#docker-settings "Docker Settings")). It's sufficient if you do this once the first time you use the pipeline.
@@ -128,7 +128,7 @@ The software image runs on Docker. Docker is an open platform for developers and
 2. **Copy the file containing all sequences you want to analyze into the *sdplots* folder.** It must be named *[PREFIX]_cds.fa* where *[PREFIX]* can be any character sequence. If you want to provide the amino acid sequences along with the nucleotide sequences, also create a second file called *[PREFIX]_aa.fa* and place it in the *sdplots*-folder as well. The prefix must be the same!
 > Please note that sequences without a full date (formatted as either yyyy-mm-dd or yyyy/mm/dd) will be ignored.
 > Identifiers in the cds file must match the identifiers for the respective aa-sequence in the aa file.
-> For a reference file of how [PREFIX]_cds.fa should look like, please refer to [this file](https://github.com/hzi-bifo/SDplots/blob/master/Docker/data_cds.fa "data_cds.fa").
+> For a reference file of how [PREFIX]_cds.fa should look like, please refer to [this file](https://github.com/hzi-bifo/SDplots/blob/master/Software/Testdata/HA_cds.fa "HA_cds.fa").
 
 ### 3) Running the Pipeline
 1. You need to **share the folder** that contains the *sdplots*-folder in the Docker Settings (see [File Sharing](https://docs.docker.com/docker-for-mac/#file-sharing "Docker for Mac")). It's sufficient if you do this once the first time you use the pipeline.
