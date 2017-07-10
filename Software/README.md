@@ -1,6 +1,5 @@
 # SD Plots Pipeline
-This readme describes the software that was used to generate the data published in the manuscript *Sweep Dynamics (SD) plots: Computational identification of selective sweeps to monitor the adaptation of influenza A viruses*. The SD plots pipeline is embedded in a docker container and available for Linux, Windows and Mac systems.
-Follow the steps below according to your operating system to deploy the pipeline yourself.
+This readme describes the deployment and execution of a Docker image, which contains software that was used to generate the data published in the manuscript *Sweep Dynamics (SD) plots: Computational identification of selective sweeps to monitor the adaptation of influenza A viruses*. The image is available for Linux, Windows and Mac systems. Follow the steps below according to your operating system to use the pipeline yourself.
 
 **Contents of this Readme:**
 + SD Plots on Linux
