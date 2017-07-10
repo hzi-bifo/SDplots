@@ -35,11 +35,10 @@ The software runs on Docker. Docker is an open platform for developers and sysad
 > For a reference file of how *[PREFIX]_cds.fa* should look like, please refer to [this file](https://github.com/hzi-bifo/SDplots/blob/master/Software/Testdata/HA_cds.fa "HA_cds.fa").
 
 ### 3) Running the Pipeline
-1. To run the SDplots pipeline, **open your terminal and insert**
-:
-
-	$docker run -v [Complete/path/to/your/local/folder/]sdplots:/app/sdplots tklingenbifolab/sdplots:beta -i [PREFIX] -o [OUTPUT NAME] -r [ROOT SEQUENCE] [OTHER OPTIONS (see CMD Config below)]
-
+1. To run the SD plot pipeline, **open a command-line terminal and insert**:
+		
+		$sudo docker run -v [Complete/path/to/your/local/folder/]sdplots:/app/sdplots tklingenbifolab/sdplots:beta -i [PREFIX] -o [OUTPUT NAME] -r [ROOT SEQUENCE] [OTHER OPTIONS (see CMD Config below)]
+		
 2. To **customize your pipeline-deployment**, you can append the following to the run-command:
 > 
 
