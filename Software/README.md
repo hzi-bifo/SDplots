@@ -35,7 +35,7 @@ The software runs on Docker. Docker is an open platform for developers and sysad
 > For a reference file of how *[PREFIX]_cds.fa* should look like, please refer to [this file](https://github.com/hzi-bifo/SDplots/blob/master/Software/Testdata/HA_cds.fa "HA_cds.fa").
 
 ### 3) Running the Pipeline
-1. To run the SD plot pipeline, **open a command-line terminal and insert**:
+1. To run the SDplots pipeline, **open a command-line terminal and insert**:
 		
 		$sudo docker run -v [Complete/path/to/your/local/folder/]sdplots:/app/sdplots tklingenbifolab/sdplots:beta -i [PREFIX] -o [OUTPUT NAME] -r [ROOT SEQUENCE] [OTHER OPTIONS (see CMD Config below)]
 		
@@ -84,7 +84,7 @@ The software image runs on Docker. Docker is an open platform for developers and
 
 ### 3) Running the Pipeline
 1. You need to **share the drive** that contains the *sdplots*-folder in the Docker Settings (see [Shared Drives](https://docs.docker.com/docker-for-windows/#docker-settings "Docker Settings")). It's sufficient if you do this once the first time you use the pipeline.
-2. To run the SD plot pipeline, **open your PowerShell as admin and insert**:
+2. To run the SDplots pipeline, **open your PowerShell as admin and insert**:
 		
 		$docker run -v [Complete/path/to/your/local/folder/]sdplots:/app/sdplots tklingenbifolab/sdplots:beta -i [PREFIX] -o [OUTPUT NAME] -r [ROOT SEQUENCE] [OTHER OPTIONS (see CMD Config below)]
 		
@@ -132,7 +132,7 @@ The software image runs on Docker. Docker is an open platform for developers and
 
 ### 3) Running the Pipeline
 1. You need to **share the folder** that contains the *sdplots*-folder in the Docker Settings (see [File Sharing](https://docs.docker.com/docker-for-mac/#file-sharing "Docker for Mac")). It's sufficient if you do this once the first time you use the pipeline.
-2. To run the SD plot pipeline, **open a command-line terminal and insert**:
+2. To run the SDplots pipeline, **open a command-line terminal and insert**:
 		
 		$sudo docker run -v [Complete/path/to/your/local/folder/]sdplots:/app/sdplots tklingenbifolab/sdplots:beta -i [PREFIX] -o [OUTPUT NAME] -r [ROOT SEQUENCE] [OTHER OPTIONS (see CMD Config below)]
 		
