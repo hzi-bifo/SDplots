@@ -56,7 +56,7 @@ The software runs on Docker. Docker is an open platform for developers and sysad
 
 3. **Example**
 
-Say your input data is located in */home/johndoe/sdplots/HA_cds.fa* and the root sequence of your data is supposed to be *A/California/05/2009*. You want to set the output name to *test_run* and you want sampling to be enabled at 50 samples per season. You would then run
+Say your input data [(Example can be downloaded here)](https://github.com/hzi-bifo/SDplots/blob/master/Software/Testdata/HA_cds.fa "HA_cds.fa") is located in */home/johndoe/sdplots/HA_cds.fa* and the root sequence of your data is supposed to be *A/California/05/2009*. You want to set the output name to *test_run* and you want sampling to be enabled at 50 samples per season. You would then run
 
  	$sudo docker run -v /home/johndoe/sdplots:/app/sdplots tklingenbifolab/sdplots:beta -i HA -o test_run -r "A/California/05/2009" -g true -s 50
 
@@ -105,7 +105,7 @@ The software image runs on Docker. Docker is an open platform for developers and
 
 4. **Example**
 
-Say your input data is located in *C:\users\johndoe\Documents\sdplots\HA_cds.fa* and the root sequence of your data is supposed to be *A/California/05/2009*. You want to set the output name to *test_run* and you want sampling to be enabled at 50 samples per season. You would then run
+Say your input data [(Example can be downloaded here)](https://github.com/hzi-bifo/SDplots/blob/master/Software/Testdata/HA_cds.fa "HA_cds.fa") is located in *C:\users\johndoe\Documents\sdplots\HA_cds.fa* and the root sequence of your data is supposed to be *A/California/05/2009*. You want to set the output name to *test_run* and you want sampling to be enabled at 50 samples per season. You would then run
 
 	$docker run -v C:\users\johndoe\Documents\sdplots:\app\sdplots tklingenbifolab/sdplots:beta -i HA -o test -r "A/California/05/2009" -g true -s 50
 
@@ -153,7 +153,7 @@ The software image runs on Docker. Docker is an open platform for developers and
 
 4. **Example**
 
-Say your input data is located in */Users/johndoe/Documents/sdplots/HA_cds.fa* and the root sequence of your data is supposed to be *A/California/05/2009*. You want to set the output name to *test_run* and you want sampling to be enabled at 50 samples per season. You would then run
+Say your input data [(Example can be downloaded here)](https://github.com/hzi-bifo/SDplots/blob/master/Software/Testdata/HA_cds.fa "HA_cds.fa") is located in */Users/johndoe/Documents/sdplots/HA_cds.fa* and the root sequence of your data is supposed to be *A/California/05/2009*. You want to set the output name to *test_run* and you want sampling to be enabled at 50 samples per season. You would then run
 
 	$docker run -v /Users/johndoe/Documents/sdplots:/app/sdplots tklingenbifolab/sdplots:beta -i HA -o test -r "A/California/05/2009" -g true -s 50
 
