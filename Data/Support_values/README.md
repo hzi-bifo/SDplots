@@ -1,1 +1,1 @@
-This folder contains support values for all sweep-related substitutions.
+This folder contains support values for all sweep-related substitutions. We used the SH-test to assign support values to internal branches. Further, we reinferred phylogenies on subsampled protein sites.
